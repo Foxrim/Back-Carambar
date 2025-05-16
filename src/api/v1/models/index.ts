@@ -1,6 +1,7 @@
 import { Sequelize } from 'sequelize';
 import  AnswerModel  from "./answer.model";
 import  QuestionModel  from "./question.model";
+import { logger } from "../../../utils/logger";
 
 export const sequelize = new Sequelize({
   dialect: 'sqlite',
@@ -16,5 +17,5 @@ Answer.belongsTo(Question, { foreignKey: 'question_id', as: 'questions' });
 
 export const initDb = async () => {
   await sequelize.sync();
-  console.log('📂 SQLite DB synchronisée !');
+  logger.info('📂 SQLite DB synchronisée !');
 };
