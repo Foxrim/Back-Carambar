@@ -1,7 +1,9 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../../../db/models";
 
-export const Question = sequelize.define('Question', {
+export const Question = sequelize.define(
+  "Questions",
+  {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
@@ -11,4 +13,6 @@ export const Question = sequelize.define('Question', {
       type: DataTypes.STRING,
       allowNull: false,
     },
-});
+  },
+  { freezeTableName: true }
+);
