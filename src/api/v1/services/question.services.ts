@@ -1,4 +1,4 @@
-import { Question } from "../models/question.model";
+import { Question } from "../models"
 
 export const findAllQuestions = async () => {
   const allQuestion = await Question.findAll();

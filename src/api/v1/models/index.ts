@@ -1,6 +1,6 @@
 import { Sequelize } from 'sequelize';
-import { QuestionModel } from './question.model';
-import { AnswerModel } from './answer.model';
+import  AnswerModel  from "./answer.model";
+import  QuestionModel  from "./question.model";
 
 export const sequelize = new Sequelize({
   dialect: 'sqlite',

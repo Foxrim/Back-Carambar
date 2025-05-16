@@ -5,7 +5,7 @@ export const getAllAnswers = async (req: Request, res: Response) => {
   try {
     const answer = await findAllAnswers();
 
-    if (!answer) {
+    if (answer.length === 0) {
       res.status(404).json({ error: "Réponses non trouvées." });
       return;
     }
