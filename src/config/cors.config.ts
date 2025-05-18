@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const allowedOrigins = [`http://${process.env.HOST}:${process.env.PORT}`];
+const allowedOrigins = [`http://${process.env.HOST}:${process.env.PORT}`, `${process.env.BACK_LINK}`];
 
 export const corsOptions: cors.CorsOptions = {
   origin: (origin, callback) => {

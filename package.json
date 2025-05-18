@@ -2,7 +2,7 @@
   "name": "carambar",
   "version": "1.0.0",
   "description": "Node.js app with Express, Sequelize, SQLite, and TypeScript",
-  "main": "dist/server.ts",
+  "main": "dist/server.js",
   "scripts": {
     "dev": "nodemon --watch src --ext ts --exec ts-node src/server.ts",
     "build": "tsc",
