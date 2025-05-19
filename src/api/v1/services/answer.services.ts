@@ -20,8 +20,8 @@ export const findAnswer = async (id: number) => {
     return answer;
 };
 
-export const addAnswer = async (textAnswer: string, questionId: number) => {
-    const addAnswer = await Answer.create({text_answer: textAnswer, question_id: questionId});
+export const addAnswer = async (text_answer: string, question_id: number) => {
+    const addAnswer = await Answer.create({text_answer, question_id});
 
     if (!addAnswer) {
         throw new Error("La nouvelle réponse n'a pas pu être ajoutée.");
@@ -30,8 +30,8 @@ export const addAnswer = async (textAnswer: string, questionId: number) => {
     return addAnswer;
 };
 
-export const updateAnswer = async (id: number, textAnswer: string, questionId: number) => {
-    const updateAnswer = await Answer.update({text_answer: textAnswer, question_id: questionId}, {where: { id }});
+export const updateAnswer = async (id: number, text_answer: string, question_id: number) => {
+    const updateAnswer = await Answer.update({text_answer, question_id}, {where: { id }});
 
     if (!updateAnswer) {
         throw new Error("La modification n'a pas pu s'effectuer.");

@@ -42,17 +42,17 @@ export const getAnswer = async (req: Request, res: Response) => {
 };
 
 export const postAnswer = async (req: Request, res: Response) => {
-    const { textAnswer, questionId } = req.body;
+    const { text_answer, question_id } = req.body;
 
     try {
-        const newAnswer = await addAnswer(textAnswer, Number(questionId));
+        const newAnswer = await addAnswer(text_answer, Number(question_id));
 
         if (!newAnswer) {
             res.status(404).json({ error: "Réponse non ajoutée."});
             return;
         }
 
-        res.status(201).json({ message: `La réponse viens d'être ajouté : ${textAnswer}`});
+        res.status(201).json({ message: `La réponse viens d'être ajouté : ${text_answer}`});
     } catch (err) {
         res.status(500).json({ message: "Une erreur s'est produite durant la création de réponse.", error: err });
     }
@@ -60,17 +60,17 @@ export const postAnswer = async (req: Request, res: Response) => {
 
 export const putAnswer = async (req: Request, res: Response) => {
     const id = Number(req.params.id);
-    const { textAnswer, questionId } = req.body;
+    const { text_answer, question_id } = req.body;
 
     try {
-        const modifyAnswer = await updateAnswer(id, textAnswer, Number(questionId));
+        const modifyAnswer = await updateAnswer(id, text_answer, Number(question_id));
 
         if (!modifyAnswer) {
             res.status(404).json({ error: "Réponse non modifiée."});
             return;
         }
 
-        res.status(200).json({ message: `La réponse viens d'être modifié par : ${textAnswer}`});
+        res.status(200).json({ message: `La réponse viens d'être modifié par : ${text_answer}`});
     } catch (err) {
         res.status(500).json({ message: "Une erreur s'est produite durant la modification de réponse.", error: err });
     }

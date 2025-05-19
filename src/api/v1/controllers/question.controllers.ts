@@ -42,17 +42,17 @@ export const getQuestion = async (req: Request, res: Response) => {
 };
 
 export const postQuestion = async (req: Request, res: Response) => {
-    const { textQuestion } = req.body;
+    const { text_question } = req.body;
 
     try {
-        const newQuestion = await addQuestion(textQuestion);
+        const newQuestion = await addQuestion(text_question);
 
         if (!newQuestion) {
             res.status(404).json({ error: "Question non ajoutée."});
             return;
         }
 
-        res.status(201).json({ message: `La question viens d'être ajouté : ${textQuestion}`});
+        res.status(201).json({ message: `La question viens d'être ajouté : ${text_question}`});
     } catch (err) {
         res.status(500).json({ message: "Une erreur s'est produite durant la création de question.", error: err });
     }
@@ -60,17 +60,17 @@ export const postQuestion = async (req: Request, res: Response) => {
 
 export const putQuestion = async (req: Request, res: Response) => {
     const id = Number(req.params.id);
-    const { textQuestion } = req.body;
+    const { text_question } = req.body;
 
     try {
-        const modifyQuestion = await updateQuestion(id, textQuestion);
+        const modifyQuestion = await updateQuestion(id, text_question);
 
         if (!modifyQuestion) {
             res.status(404).json({ error: "Question non modifiée."});
             return;
         }
 
-        res.status(200).json({ message: `La question viens d'être modifié par : ${textQuestion}`});
+        res.status(200).json({ message: `La question viens d'être modifié par : ${text_question}`});
     } catch (err) {
         res.status(500).json({ message: "Une erreur s'est produite durant la modification de question.", error: err });
     }
