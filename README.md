@@ -32,15 +32,20 @@ This project is a simple Node.js application that uses Express, Sequelize, and S
 
 To start the application, run:
 ```
-npm start
+npm start or npm run dev
 ```
 
-The application will be running on `http://localhost:3000`.
+The application will be running on `http://localhost:3000` for exemple.
 
 ## Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request.
 
-## License
+## Documentation 
 
-This project is licensed under the MIT License.
+You can check here if you want to see more about the API :
+https://app.swaggerhub.com/apis-docs/foxrim/carambar/1.0.0
+
+You can check here if you want to see the result on front project :
+Github front : https://github.com/Foxrim/Front-Carambar
+Result : https://foxrim.github.io/Front-Carambar/
